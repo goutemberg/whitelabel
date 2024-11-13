@@ -1,0 +1,464 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>MGL</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{% static 'whitelabel/images/favicon.png' %}" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+        <!-- Bootstrap Icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        <!-- SimpleLightbox plugin CSS-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="../../../static/whitelabel/css/style.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#page-top">MGL Automações</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#about">Sobre nós</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Serviços</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <style>
+           
+            .navbar .navbar-brand {
+                color: black !important; 
+            }
+            .navbar .nav-link {
+                color: black !important; 
+            }
+            .navbar .nav-link:hover {
+                color: #000000 !important;
+            }
+    
+            
+            .masthead {
+                height: 100vh;
+                background-size: cover;
+                background-position: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+            }
+    
+           
+            .content-container {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                padding: 0 20px;
+            }
+    
+            
+            .content-container h2 {
+                align-self: flex-start;
+                margin-top: 90px; 
+            }
+    
+           
+            .masthead p {
+                position: absolute
+                max-width: 80%  
+                text-align: right  /* Ajuste a distância da direita */
+                color: black;
+                bottom: 180px;
+            }
+            /* Estilo inicial */
+            .portfolio-box {
+                position: relative;
+                display: block;
+                width: 100%;
+                overflow: hidden;
+            }
+        
+            .portfolio-box img {
+                width: 100%;
+                height: auto;
+                transition: transform 0.3s ease;
+            }
+        
+            .portfolio-box:hover img {
+                transform: scale(1.05); /* Efeito de zoom na imagem */
+            }
+        
+            .portfolio-box-caption {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                background-color: rgba(0, 0, 0, 0.6); /* Fundo preto semi-transparente */
+                transition: background-color 0.3s ease;
+            }
+        
+            /* Alteração da cor no hover com !important */
+            .portfolio-box:hover .portfolio-box-caption {
+                background-color: rgba(37, 211, 102, 0.8) !important; /* Forçando o verde do WhatsApp */
+            }
+        
+            .portfolio-box-caption .project-category,
+            .portfolio-box-caption .project-name {
+                opacity: 1;
+                visibility: visible;
+            }
+        
+            /* Transição suave para o texto no hover */
+            .portfolio-box:hover .project-category,
+            .portfolio-box:hover .project-name {
+                color: white; /* Cor do texto branco no hover */
+            }
+            .btn-whatsapp {
+                background-color: #25D366;
+                border-color: #25D366;
+                color: white;
+            }
+            
+            .btn-whatsapp:hover {
+                background-color: #1EBE57;
+                border-color: #1EBE57;
+                color: white;
+            }
+            .modal {
+                display: block;
+                position: fixed;
+                z-index: 1000;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(0, 0, 0, 0.4);
+            }
+            .modal-content {
+                background-color: #fefefe;
+                margin: 15% auto;
+                padding: 20px;
+                border: 1px solid #888;
+                width: 80%;
+                max-width: 400px;
+                text-align: center;
+            }
+            .btn {
+                background-color: #25D366; /* Verde do WhatsApp */
+                color: white;
+            }
+            .whatsapp_float {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                z-index: 100;
+            }
+    
+            .whatsapp_icon {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+                transition: all 0.3s ease-in-out; /* Transição suave */
+            }
+    
+            .whatsapp_float:hover .whatsapp_icon {
+                transform: scale(1.2); /* Expande 20% */
+            }
+            
+        </style>
+  <!-- Masthead-->
+  <header class="masthead" style="background-image: url('{% static 'whitelabel/images/home.png' %}'); background-size: cover; background-position: center; height: 100vh;">    <div class="container px-4 px-lg-5 h-100">
+        <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+        <div class="content-container">
+                <div class="col-lg-8">
+                    <h2 class="text-black font-weight-bold">Otimize o atendimento da sua empresa com nosso serviço de chatbot</h2>
+                    <hr class="divider"/>
+                </div>
+                <div class="col-lg-8">
+                    <p class="text-black-75 mb-5">Facilite a comunicação e aumente a satisfação do cliente<br>com respostas instantâneas e automáticas disponível 24/7 para seus clientes.</p>
+                </div>
+            </div>  
+        </div>
+    </div>
+    </header>
+        <!-- About-->
+        <section class="page-section bg-white" id="about">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="text-black mt-0">Nós temos a Solução que você Precisa!</h2>
+                        <hr class="divider divider-black" />
+                        <p class="text-black-75 mb-4">Os serviços de chatbot têm se tornado uma ferramenta valiosa para pizzarias, hamburguerias e outros estabelecimentos de alimentação. Eles oferecem atendimento automatizado, 24 horas por dia, permitindo que os clientes façam pedidos, tirem dúvidas e recebam informações sobre promoções de maneira rápida e eficiente. Além disso, o uso de chatbots pode ajudar a otimizar o tempo dos funcionários, automatizando tarefas repetitivas e garantindo um serviço mais ágil, o que pode melhorar a experiência do cliente e aumentar as vendas.</p>
+                        <a class="btn btn-light btn-xl" href="https://api.whatsapp.com/send?phone=+5531995879154&text=Olá!%20Estou%20interessado%20em%20seus%20servicos." target="_blank" style="background-color: #25D366; color: white;">
+                            <i class="fab fa-whatsapp"></i> CHAMAR NO WHATSAPP
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Services-->
+        <section class="page-section" id="services">
+            <div class="container px-4 px-lg-5">
+                <h2 class="text-center mt-0">Nossos Serviços</h2>
+                <hr class="divider" />
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Restaurantes e Delivery</h3>
+                            <p class="text-muted mb-0">
+                                Os chatbots estão transformando o setor de alimentos, automatizando pedidos e agilizando o atendimento.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Educação</h3>
+                            <p class="text-muted mb-0">Os serviços de chatbot estão revolucionando o setor educacional ao oferecer suporte personalizado aos alunos, professores e administradores.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Pequenos Negócios</h3>
+                            <p class="text-muted mb-0">O uso de chatbots em pequenos negócios pode revolucionar o atendimento ao cliente, oferecendo respostas instantâneas a dúvidas</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-heart fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Saúde e Clínicas</h3>
+                            <p class="text-muted mb-0">Nas clínicas, chatbots podem automatizar o agendamento de consultas, enviar lembretes para os pacientes e responder a perguntas frequentes sobre tratamentos e exames.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Portfolio-->
+        <div id="portfolio">
+            <div class="container-fluid p-0">
+                <div class="row g-0">
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="portfolio-box">
+                            <img class="img-fluid" src="{% static 'whitelabel/images/portfolio/thumbnails/1.jpg' %}" alt="..." />
+                            <div class="portfolio-box-caption p-3">
+                                 <!--div class="project-category text-white-50">Category</div-->
+                                <div class="project-name">Restaurantes e Delivery</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="portfolio-box">
+                            <img class="img-fluid" src="{% static 'whitelabel/images/portfolio/thumbnails/1.jpg' %}" alt="..." />
+                            <div class="portfolio-box-caption p-3">
+                                 <!--div class="project-category text-white-50">Category</div-->
+                                <div class="project-name">Saúde e Clínicas</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="portfolio-box">
+                            <img class="img-fluid" src="{% static 'whitelabel/images/portfolio/thumbnails/1.jpg' %}" alt="..." />
+                            <div class="portfolio-box-caption p-3">
+                                 <!--div class="project-category text-white-50">Category</div-->
+                                <div class="project-name">Educação e Instituições de Ensino</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="portfolio-box">
+                            <img class="img-fluid" src="{% static 'whitelabel/images/portfolio/thumbnails/1.jpg' %}" alt="..." />
+                            <div class="portfolio-box-caption p-3">
+                                 <!--div class="project-category text-white-50">Category</div-->
+                                <div class="project-name">Atendimento ao Cliente</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="portfolio-box">
+                            <img class="img-fluid" src="{% static 'whitelabel/images/portfolio/thumbnails/1.jpg' %}" alt="..." />
+                            <div class="portfolio-box-caption p-3">
+                                 <!--div class="project-category text-white-50">Category</div-->
+                                <div class="project-name">Pequenos Negócios</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="portfolio-box">
+                            <img class="img-fluid" src="{% static 'whitelabel/images/portfolio/thumbnails/1.jpg' %}" alt="..." />
+                            <div class="portfolio-box-caption p-3">
+                                <!--div class="project-category text-white-50">Category</div-->
+                                <div class="project-name">Serviços em Gerais</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Call to action-->
+        <section class="page-section" style="background-color: #FCFBFA; color: black;">
+            <div class="container px-4 px-lg-5 text-center">
+                <h2 class="mb-4">Faça sua Cotação Agora</h2>
+                <a class="btn btn-light btn-xl" href="https://api.whatsapp.com/send?phone=+5531995879154&text=Olá!%20Estou%20interessado%20em%20seus%20servicos." target="_blank" style="background-color: #25D366; color: white;">
+                    <i class="fab fa-whatsapp"></i> CHAMAR NO WHATSAPP
+                </a>
+            </div>
+        </section>
+        
+        <!-- Contact-->
+        <section class="page-section" id="contact">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8 col-xl-6 text-center">
+                        <h2 class="mt-0">Entre em Contato Conosco!</h2>
+                        <hr class="divider" />
+                        <p class="text-muted mb-5">Pronto para começar seu próximo projeto conosco? Envie-nos uma mensagem e retornaremos o mais rápido possível!</p>
+                    </div>
+                </div>
+                <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
+                    <div class="col-lg-6">
+                        <!-- https://startbootstrap.com/solution/contact-forms-->
+                        <form id="contactForm" method="POST" data-sb-form-api-token="API_TOKEN" action="{% url 'send_email_view' %}">
+                            {% csrf_token %}
+                            <!-- Name input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="name" name="name" type="text" placeholder="Enter your name..." required oninvalid="this.setCustomValidity('Informe Seu Nome')" oninput="setCustomValidity('')"/>
+                                <label for="name">Nome Completo</label>
+                                <div class="invalid-feedback" data-sb-feedback="name:required">Favor Informar seu nome.</div>
+                            </div>
+                            <!-- Email address input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="email" name="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" required oninvalid="this.setCustomValidity('Informe Seu E-mail')" oninput="setCustomValidity('')"/>
+                                <label for="email">Email</label>
+                                <div class="invalid-feedback" data-sb-feedback="email:required">Favor Informar um Email.</div>
+                                <div class="invalid-feedback" data-sb-feedback="email:email">Email não é valido.</div>
+                            </div>
+                            <!-- Phone number input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="phone" name="phone" type="tel" placeholder="(XX) 9 XXXX-XXXX" required oninvalid="this.setCustomValidity('Informe Seu Telefone')" oninput="setCustomValidity('')"/>
+                                <label for="phone">Celular</label>
+                                <div class="invalid-feedback" data-sb-feedback="phone:required">Favor Informar um celular.</div>
+                            </div>
+                            <!-- Setor da empresa -->
+                            <div class="form-floating mb-3">
+                                <select class="form-control" id="setor" name="setor" required oninvalid="this.setCustomValidity('Escolha o setor da sua empresa')" oninput="setCustomValidity('')">
+                                    <option value="">Escolha o setor</option>
+                                    <option value="atendimento ao cliente">Atendimento ao Cliente</option>
+                                    <option value="delivery">Delivery</option>
+                                    <option value="educacao">Educação</option>
+                                    <option value="financas">Finanças</option>
+                                    <option value="marketing">Marketing</option>
+                                    <option value="pequenos negocios">Pequenos Negócios</option>
+                                    <option value="restaurante">Restaurantes</option>
+                                    <option value="servicos em gerais">Serviços em Gerais</option>
+                                    <option value="saude">Saúde</option>
+                                    <option value="tecnologia">Tecnologia</option>
+                                    <option value="outros">Outros</option>
+                                </select>
+                                <label for="setor">Setor da Empresa</label>
+                                <div class="invalid-feedback" data-sb-feedback="setor:required">Favor escolher o setor da empresa.</div>
+                            </div>
+                             <!-- Message input-->
+                             <div class="form-floating mb-3">
+                                <textarea class="form-control" id="message" name="message" type="text" placeholder="Enter your message here..." style="height: 10rem" required oninvalid="this.setCustomValidity('Digite sua Mensagem')" oninput="setCustomValidity('')"></textarea>
+                                <label for="message">Mensagem</label>
+                                <div class="invalid-feedback" data-sb-feedback="message:required">Digite sua mensagem.</div>
+                            </div>
+                            <div class="d-grid">
+                                <button class="btn btn-whatsapp btn-xl" id="submitButton" type="submit">Enviar</button>
+                            </div>
+                        <form/>                  
+                    <!-- Popup de sucesso/erro -->
+                <div id="emailModal" class="modal" style="display: none;">
+                <div class="modal-content">
+                <h2 id="modalTitle"></h2>
+                <p id="modalMessage"></p>
+                <button id="modalButton" class="btn btn-primary">OK</button>
+                </div>
+                </div>                        
+                    </div>
+                </div>
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-4 text-center mb-5 mb-lg-0">
+                        <i class="bi-phone fs-2 mb-3 text-muted"></i>
+                        <div>+55 (31) 9 9587-9154</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="bg-light py-5">
+            <div class="container px-4 px-lg-5">
+                <div class="d-flex justify-content-center">
+                    <a href="https://x.com" class="text-muted mx-3" target="_blank">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+                    <a href="https://instagram.com/whitelabelrobochat/" class="text-muted mx-3" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=+5531995879154&text=Olá!%20Estou%20interessado%20em%20seus%20servicos." target="_blank" class="text-muted mx-3" target="_blank"> 
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://youtube.com/@whitelabel" class="text-muted mx-3" target="_blank">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://telegram.org" class="text-muted mx-3" target="_blank">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                </div>
+                <div class="small text-center text-muted mt-3">Copyright &copy; {% now "Y" %} - MGL Automações</div>
+            </div>  
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+        <script src="static/whitelabel/js/scripts.js"></script>
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+                {% if success %}
+                    showModal("Sucesso", "Seu e-mail foi enviado com sucesso!", "{% url 'index' %}");
+                {% elif error_message %}
+                    showModal("Erro", "{{ error_message }}", "{% url 'index' %}");
+                {% endif %}
+        
+                function showModal(title, message, redirectUrl) {
+                    document.getElementById('modalTitle').textContent = title;
+                    document.getElementById('modalMessage').textContent = message;
+                    document.getElementById('emailModal').style.display = 'block';
+        
+                    document.getElementById('modalButton').addEventListener('click', function() {
+                        window.location.href = redirectUrl;
+                    });
+                }
+            });
+        </script>
+        <a href="https://api.whatsapp.com/send?phone=+5531995879154&text=Olá!%20Estou%20interessado%20em%20seus%20servicos." class="whatsapp_float" target="_blank">
+            <img src="{% static 'whitelabel/images/portfolio/thumbnails/WhatsApp_icon.png' %}" alt="WhatsApp" width="75" height="75">
+        </a>
+    </body>
+</html>

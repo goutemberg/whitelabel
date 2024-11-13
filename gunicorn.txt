@@ -1,0 +1,79 @@
+###############################################################################
+# Replace
+# mglapp the name of the gunicorn file you want
+# goutemberg your user name
+# mglapp the folder name of your project
+# pedilaso the folder name where you find a file called wsgi.py
+#
+# mglapp the name of the gunicorn file you want
+# goutemberg your user name
+# mglapp the folder name of your project
+# pedilaso the folder name where you find a file called wsgi.py
+###############################################################################
+# Criando o arquivo mglapp.socket
+sudo nano /etc/systemd/system/mglapp.socket
+
+###############################################################################
+# Conteúdo do arquivo
+[Unit]
+Description=gunicorn mglapp socket
+
+[Socket]
+ListenStream=/run/mglapp.socket
+
+[Install]
+WantedBy=sockets.target
+
+###############################################################################
+# Criando o arquivo mglapp.service
+sudo nano /etc/systemd/system/mglapp.service
+
+###############################################################################
+# Conteúdo do arquivo
+[Unit]
+Description=Gunicorn daemon (You can change if you want)
+Requires=mglapp.socket
+After=network.target
+
+[Service]
+User=goutemberg
+Group=www-data
+Restart=on-failure
+# EnvironmentFile=/home/goutemberg/mglapp/.env
+WorkingDirectory=/home/goutemberg/mglapp
+# --error-logfile --enable-stdio-inheritance --log-level and --capture-output
+# are all for debugging purposes.
+ExecStart=/home/goutemberg/mglapp/venv/bin/gunicorn \
+          --error-logfile /home/goutemberg/mglapp/gunicorn-error-log \
+          --enable-stdio-inheritance \
+          --log-level "debug" \
+          --capture-output \
+          --access-logfile - \
+          --workers 6 \
+          --bind unix:/run/mglapp.socket \
+          pedilaso.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
+
+###############################################################################
+# Ativando
+sudo systemctl start mglapp.socket
+sudo systemctl enable mglapp.socket
+
+# Checando
+sudo systemctl status mglapp.socket
+curl --unix-socket /run/mglapp.socket localhost
+sudo systemctl status mglapp
+
+# Restarting
+sudo systemctl restart mglapp.service
+sudo systemctl restart mglapp.socket
+sudo systemctl restart mglapp
+
+# After changing something
+sudo systemctl daemon-reload
+
+# Debugging
+sudo journalctl -u mglapp.service
+sudo journalctl -u mglapp.socket
