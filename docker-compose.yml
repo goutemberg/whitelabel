@@ -1,16 +1,16 @@
 version: '3.9'
 
 services:
-  mglrobochat:
-    container_name: projeto_pedilaso
+  whitelabel:
+    container_name: projeto_whitelabel
     build:
       context: .
     ports:
       - 8000:8000
     volumes:
-      - .:/projeto_pedilaso
-      - .:/data/web/static:/projeto_pedilaso/home/static/pedilaso
-      - .:/data/web/media:/projeto_pedilaso/home/static/pedilaso/media
+      - .:/projeto_whitelabel
+      - .:/data/web/static:/projeto_whitelabel/home/static/whitelabel
+      - .:/data/web/media:/projeto_whitelabel/home/static/whitelabel/media
     env_file:
       - ./dotenv_files/.env
     depends_on:
