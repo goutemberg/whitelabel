@@ -1,12 +1,12 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-    <head> 
+    <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>MGL</title>
+        <title>New Power</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{% static 'whitelabel/images/favicon.png' %}" />
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
@@ -19,192 +19,210 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="../../../static/whitelabel/css/style.css" rel="stylesheet" />
-    </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-            <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#page-top">MGL Automações</a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#about">Sobre nós</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">Serviços</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contato</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
         <style>
-           
-            .navbar .navbar-brand {
-                color: black !important; 
+            .top-info-bar {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                background-color: #d35400;
+                z-index: 1030;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 12px 0;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                color: #ffffff;
+                font-size: 14px;
             }
-            .navbar .nav-link {
-                color: black !important; 
+            .projects-text {
+                font-weight: bold;
+                color: #FF7F50;  /* Cor do texto destacado */
             }
-            .navbar .nav-link:hover {
-                color: #000000 !important;
+            
+            .masthead h1 {
+                width: 100%;  /* Garantir que o texto ocupe toda a largura disponível */
+                word-wrap: break-word;  /* Quebra a linha automaticamente, se necessário */
+                white-space: normal;  /* Permite quebras de linha */
             }
-    
+            
+            .top-info-bar div {
+                display: flex;
+                align-items: center;
+                margin: 0 20px;
+            }
+            
+            .top-info-bar div i {
+                margin-right: 5px;
+                font-size: 16px;
+            }
+            
+            .top-info-bar div span {
+                font-weight: bold;
+            }
+            
+            .top-info-bar a {
+                color: #ffffff;
+                text-decoration: none;
+            }
+            
+            .top-info-bar a:hover {
+                color: #ffd7ba;
+            }
+            
+            .navbar {
+                margin-top: 40px;
+                height: 70px;
+                display: flex;
+                align-items: center;
+            }
             
             .masthead {
                 height: 100vh;
+                background-image: url('{% static "whitelabel/assets/img/bg-masthead.jpg" %}');
                 background-size: cover;
                 background-position: center;
+                position: relative;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                position: relative;
+                text-align: center;
             }
     
-           
-            .content-container {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                align-items: center;
-                width: 100%;
-                height: 100%;
-                padding: 0 20px;
-            }
-    
-            
-            .content-container h2 {
-                align-self: flex-start;
-                margin-top: 90px; 
-            }
-    
-           
-            .masthead p {
-                position: absolute
-                max-width: 80%  
-                text-align: right  /* Ajuste a distância da direita */
-                color: black;
-                bottom: 180px;
-            }
-            /* Estilo inicial */
-            .portfolio-box {
-                position: relative;
-                display: block;
-                width: 100%;
-                overflow: hidden;
-            }
-        
-            .portfolio-box img {
-                width: 100%;
-                height: auto;
-                transition: transform 0.3s ease;
-            }
-        
-            .portfolio-box:hover img {
-                transform: scale(1.05); /* Efeito de zoom na imagem */
-            }
-        
-            .portfolio-box-caption {
+            .masthead::before {
+                content: "";
                 position: absolute;
                 top: 0;
                 left: 0;
-                width: 100%;
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(0, 0, 0, 0.6);
+                z-index: 1;
+            }
+    
+            .masthead .container {
+                z-index: 2;
+            }
+    
+            .text-highlight {
+                color: #ffffff;
+            }
+    
+            .text-highlight-light {
+                color: #ffffff;
+            }
+    
+            .btn {
+                padding: 15px 25px;
+                font-size: 1.2rem;
+                font-weight: bold;
+                border: none;
+                border-radius: 30px;
+                display: inline-flex;
                 align-items: center;
-                color: white;
-                background-color: rgba(0, 0, 0, 0.6); /* Fundo preto semi-transparente */
-                transition: background-color 0.3s ease;
+                justify-content: center;
+                text-align: center;
+                transition: all 0.3s ease;
             }
-        
-            /* Alteração da cor no hover com !important */
-            .portfolio-box:hover .portfolio-box-caption {
-                background-color: rgba(37, 211, 102, 0.8) !important; /* Forçando o verde do WhatsApp */
-            }
-        
-            .portfolio-box-caption .project-category,
-            .portfolio-box-caption .project-name {
-                opacity: 1;
-                visibility: visible;
-            }
-        
-            /* Transição suave para o texto no hover */
-            .portfolio-box:hover .project-category,
-            .portfolio-box:hover .project-name {
-                color: white; /* Cor do texto branco no hover */
-            }
+    
             .btn-whatsapp {
                 background-color: #25D366;
                 border-color: #25D366;
                 color: white;
             }
-            
+    
             .btn-whatsapp:hover {
                 background-color: #1EBE57;
                 border-color: #1EBE57;
-                color: white;
-            }
-            .modal {
-                display: block;
-                position: fixed;
-                z-index: 1000;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                overflow: auto;
-                background-color: rgba(0, 0, 0, 0.4);
-            }
-            .modal-content {
-                background-color: #fefefe;
-                margin: 15% auto;
-                padding: 20px;
-                border: 1px solid #888;
-                width: 80%;
-                max-width: 400px;
-                text-align: center;
-            }
-            .btn {
-                background-color: #25D366; /* Verde do WhatsApp */
-                color: white;
-            }
-            .whatsapp_float {
-                position: fixed;
-                bottom: 20px;
-                right: 20px;
-                z-index: 100;
             }
     
-            .whatsapp_icon {
-                width: 60px;
-                height: 60px;
-                border-radius: 50%;
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-                transition: all 0.3s ease-in-out; /* Transição suave */
+            .btn-whatsapp i {
+                margin-right: 10px;
+                font-size: 1.5rem;
             }
     
-            .whatsapp_float:hover .whatsapp_icon {
-                transform: scale(1.2); /* Expande 20% */
+            .btn-orcamento {
+                background-color: #FF7F50;
+                border-color: #FF7F50;
+                color: white;
             }
-            
-        </style>
-  <!-- Masthead-->
-  <header class="masthead" style="background-image: url('{% static 'whitelabel/images/home.png' %}'); background-size: cover; background-position: center; height: 100vh;">    <div class="container px-4 px-lg-5 h-100">
-        <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
-        <div class="content-container">
-                <div class="col-lg-8">
-                    <h2 class="text-black font-weight-bold">Otimize o atendimento da sua empresa com nosso serviço de chatbot</h2>
-                    <hr class="divider"/>
-                </div>
-                <div class="col-lg-8">
-                    <p class="text-black-75 mb-5">Facilite a comunicação e aumente a satisfação do cliente<br>com respostas instantâneas e automáticas disponível 24/7 para seus clientes.</p>
-                </div>
-            </div>  
+    
+            .btn-orcamento:hover {
+                background-color: #FF6347;
+                border-color: #FF6347;
+            }
+    
+            .btn-orcamento i {
+                margin-right: 10px;
+                font-size: 1.5rem;
+            }
+    
+            .container-btn {
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+                margin-top: 20px;
+            }
+        </style>        
+    </head>
+    <body id="page-top">
+        <!-- Fixed Info Bar -->
+        <div class="top-info-bar">
+            <div>
+                <i class="bi bi-whatsapp"></i>
+                <span class="wixui-rich-text__text">WhatsApp:</span> 
+                <a href="https://wa.me/5599999999999" target="_blank" class="wixui-rich-text__text">(99) 99999-9999</a>
+            </div>
+            <div>
+                <i class="fas fa-map-marker-alt"></i>
+                <span class="wixui-rich-text__text">Endereço:</span>
+                <span class="wixui-rich-text__text">Rua Exemplo, 123 - Centro</span>
+            </div>
+            <div>
+                <i class="fas fa-envelope"></i>
+                <span class="wixui-rich-text__text">Email:</span> 
+                <a href="mailto:exemplo@email.com" class="wixui-rich-text__text">exemplo@email.com</a>
+            </div>
         </div>
-    </div>
-    </header>
+        
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand wixui-rich-text__text" href="#page-top">New Power Solar</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link wixui-rich-text__text" href="#about">Sobre nós</a></li>
+                        <li class="nav-item"><a class="nav-link wixui-rich-text__text" href="#services">Serviços</a></li>
+                        <li class="nav-item"><a class="nav-link wixui-rich-text__text" href="#portfolio">Portfolio</a></li>
+                        <li class="nav-item"><a class="nav-link wixui-rich-text__text" href="#contact">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    
+        <!-- Masthead -->
+        <header class="masthead" style="background-image: url('{% static 'whitelabel/images/home.webp' %}');">
+            <div class="container px-4 px-lg-5 h-100">
+                <div class="row gx-4 gx-lg-5 h-100 justify-content-center align-items-center text-center">
+                    <div class="col-lg-8">
+                        <h1 class="text-highlight font-weight-bold"><span class="projects-text">Vários projetos entregues</span><br> em Pernambuco.</h1>
+                        <p class="text-highlight-light mb-4">Contrate a empresa com a melhor equipe de profissionais do mercado. <br> Financie seu projeto em até 120x ou em até 21x sem juros no cartão de crédito.</p>
+                        <div class="container-btn">
+                            <!-- Botão WhatsApp -->
+                            <a href="https://wa.me/1234567890" class="btn btn-whatsapp">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                            <!-- Botão Orçamento -->
+                            <a href="#orcamento" class="btn btn-orcamento">
+                                <i class="fas fa-file-invoice-dollar"></i> Faça já seu orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
         <!-- About-->
         <section class="page-section bg-white" id="about">
             <div class="container px-4 px-lg-5">
@@ -212,7 +230,7 @@
                     <div class="col-lg-8 text-center">
                         <h2 class="text-black mt-0">Nós temos a Solução que você Precisa!</h2>
                         <hr class="divider divider-black" />
-                        <p class="text-black-75 mb-4">Os serviços de chatbot têm se tornado uma ferramenta valiosa para pizzarias, hamburguerias e outros estabelecimentos de alimentação. Eles oferecem atendimento automatizado, 24 horas por dia, permitindo que os clientes façam pedidos, tirem dúvidas e recebam informações sobre promoções de maneira rápida e eficiente. Além disso, o uso de chatbots pode ajudar a otimizar o tempo dos funcionários, automatizando tarefas repetitivas e garantindo um serviço mais ágil, o que pode melhorar a experiência do cliente e aumentar as vendas.</p>
+                        <p class="text-black-75 mb-4">Nós oferecemos soluções completas em energia solar, feitas sob medida para reduzir sua conta de luz e promover a sustentabilidade. Com nossa tecnologia e equipe especializada, você pode transformar a luz do sol em economia, além de valorizar seu imóvel e contribuir para um futuro mais limpo. Estamos aqui para atender às suas necessidades e fazer com que a energia renovável seja uma realidade acessível e prática para você.</p>
                         <a class="btn btn-light btn-xl" href="https://api.whatsapp.com/send?phone=+5531995879154&text=Olá!%20Estou%20interessado%20em%20seus%20servicos." target="_blank" style="background-color: #25D366; color: white;">
                             <i class="fab fa-whatsapp"></i> CHAMAR NO WHATSAPP
                         </a>
@@ -406,7 +424,7 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-4 text-center mb-5 mb-lg-0">
                         <i class="bi-phone fs-2 mb-3 text-muted"></i>
-                        <div>+55 (31) 9 9587-9154</div>
+                        <div>+55 (81) 9 9821-0115</div>
                     </div>
                 </div>
             </div>
@@ -431,7 +449,7 @@
                         <i class="fab fa-telegram"></i>
                     </a>
                 </div>
-                <div class="small text-center text-muted mt-3">Copyright &copy; {% now "Y" %} - MGL Automações</div>
+                <div class="small text-center text-muted mt-3">Copyright &copy; {% now "Y" %} - New Power Solar</div>
             </div>  
         </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
