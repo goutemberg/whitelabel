@@ -20,7 +20,7 @@ SECRET_KEY = "8xxmq$kc3x2z*=*@f&0xk1^fgtb(p342)$gvafcrpp1=)jh@dl"
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = bool(int(os.getenv('DEBUG', 0)))
 
-DEBUG = True
+DEBUG = False
 
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'whitelabel-solar.onrender.com']
