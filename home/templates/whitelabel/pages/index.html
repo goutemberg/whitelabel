@@ -316,15 +316,16 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
                         <li class="nav-item"><a class="nav-link wixui-rich-text__text" href="#home">HOME</a></li>
-                        <li class="nav-item"><a class="nav-link wixui-rich-text__text" href="#about">SOBRE NÓS</a></li>
+                        <li class="nav-item"><a class="nav-link wixui-rich-text__text" href="#about">SOBRE</a></li>
+                        <li class="nav-item"><a class="nav-link wixui-rich-text__text" href="#sustainable">ENERGIA LIMPA</a></li>
                         <li class="nav-item"><a class="nav-link wixui-rich-text__text" href="#services">COMO FUNCIONA</a></li>
                         <li class="nav-item"><a class="nav-link wixui-rich-text__text" href="#portfolio">PORTFOLIO</a></li>
                         <li class="nav-item"><a class="nav-link wixui-rich-text__text" href="#contact">CONTATO</a></li>
                     </ul>
+
                 </div>
             </div>
         </nav>
-    
         <!-- Masthead -->
         <header class="masthead" style="background-image: url('{% static 'whitelabel/images/home.webp' %}');" id="home">
             <div class="container px-4 px-lg-5 h-100">
@@ -346,33 +347,63 @@
                 </div>
             </div>
         </header>
-        <!-- About-->
-        <section class="page-section bg-white" id="about">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-8 text-center">
-                        <h2 class="mt-0" style="color: #FF7F50;">Como a energia solar pode abastecer sua casa!</h2>
-                        <hr class="divider divider-black" />
-                        <p class="mb-4" style="color: #FF7F50;">A energia solar capta a luz do sol por meio de painéis fotovoltaicos, convertendo-a em eletricidade para abastecer sua casa de forma sustentável e econômica. É uma solução limpa que reduz sua conta de luz e ajuda o meio ambiente.</p>
-                        <div class="container-btn">
-                            <!-- Botão WhatsApp -->
-                            <a href="https://wa.me/1234567890" class="btn btn-whatsapp">
-                                <i class="fab fa-whatsapp"></i> WhatsApp
-                            </a>
-                            <!-- Botão Orçamento -->
-                            <a href="#orcamento" class="btn btn-orcamento">
-                                <i class="fas fa-file-invoice-dollar"></i> Faça já seu orçamento
-                            </a>
-                        </div>
+<!-- About -->
+<section class="page-section bg-white mt-5" id="about"> <!-- Adicionei 'mt-5' para criar espaço acima -->
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="mt-0" style="color: #E56742;">O responsável pela transformação</h2>
+                <hr class="divider divider-black" />
+                <p class="mb-4" style="color: #666;">
+                    Somos uma empresa com mais de 1000 instalações e nenhuma reclamação! Com equipes com experiência comprovada na instalação de diversas usinas em Pernambuco, litoral e interior. Com isto, temos a certeza de que seu projeto será entregue com a melhor qualidade disponível no mercado, e o que é melhor, sem atrapalhar a sua rotina.
+                </p>
+            </div>
+        </div>
+        <div class="row gx-2 align-items-center mt-5">
+            <!-- Box com a foto -->
+            <div class="col-md-4 d-flex justify-content-center">
+                <div class="photo-box" style="width: 250px; height: 250px; background-color: #f8f9fa; border: 1px solid #ddd; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <img src="{% static 'whitelabel/images/portfolio/thumbnails/2.webp' %}" alt="Foto do responsável" style="width: 100%; height: 100%; object-fit: cover;" />
+                </div>
+            </div>
+            <!-- Texto ao lado -->
+            <div class="col-md-8" style="margin-left: -10px;"> <!-- Reduzindo o espaço com margem negativa -->
+                <h2 style="color: #E56742;">Alvaro Lima</h2>
+                <h5 style="color: #555;">Fundador</h5>
+                <p style="color: #666; line-height: 1.6;">
+                    Edmundo Araújo é formado em Engenharia Elétrica pela Universidade Federal de Pernambuco, com experiência de mais de 35 anos no grupo Eletrobrás/CHESF, e especialização nas áreas de Proteção, Controle e Automação de Sistemas de Geração e Transmissão de Energia Elétrica. Atuando também na realização de ensaios de aceitação e de homologação em laboratórios nacionais (CEPEL) e internacionais (Siemens/Alemanha e Thomson-CSF/França).
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+     <!-- Sustainable-->
+     <section class="page-section bg-white" id="sustainable">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="mt-0" style="color: #E56742;">Como a energia solar pode abastecer sua casa!</h2>
+                    <hr class="divider divider-black" />
+                    <p class="mb-4" style="color: #666;">A energia solar capta a luz do sol por meio de painéis fotovoltaicos, convertendo-a em eletricidade para abastecer sua casa de forma sustentável e econômica. É uma solução limpa que reduz sua conta de luz e ajuda o meio ambiente.</p>
+                    <div class="container-btn">
+                        <!-- Botão WhatsApp -->
+                        <a href="https://wa.me/1234567890" class="btn btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                        <!-- Botão Orçamento -->
+                        <a href="#orcamento" class="btn btn-orcamento">
+                            <i class="fas fa-file-invoice-dollar"></i> Faça já seu orçamento
+                        </a>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
         <!-- Services-->
         <section class="page-section" id="services">
             <div class="container px-4 px-lg-5">
-                <h2 class="mt-0" style="color: #FF7F50; text-align: center;">Como Funciona</h2>
-                <p class="mb-0" style="color: #FF7F50; text-align: center;">
+                <h2 class="mt-0" style="color: #E56742; text-align: center;">Como Funciona</h2>
+                <p class="mb-0" style="color: #666; text-align: center;">
                     Oferecemos soluções de energia solar para sua residência ou empresa, <br>
                     com a possibilidade de reduzir sua conta de energia em até 95%.
                 </p>
@@ -458,7 +489,7 @@
         <!-- Call to action-->
         <section class="page-section" style="background-color: #FCFBFA; color: black;">
             <div class="container px-4 px-lg-5 text-center">
-                <h2 class="mb-4">Entre em contato para mais informações</h2>
+                <h2 class="mb-4" style="color: #FF7F50;">Entre em contato para mais informações</h2>
                 <div class="container-btn">
                     <!-- Botão WhatsApp -->
                     <a href="https://wa.me/1234567890" class="btn btn-whatsapp">
@@ -477,8 +508,8 @@
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-8 col-xl-6 text-center">
-                        <h2 class="mt-0">Entre em Contato Conosco!</h2>
-                        <hr class="divider" />
+                        <h2 class="mt-0" style="color: #FF7F50;">Entre em Contato Conosco!</h2>
+                        <hr class="divider"/>
                         <p class="text-muted mb-5">Pronto para começar seu próximo projeto conosco? Envie-nos uma mensagem e retornaremos o mais rápido possível!</p>
                     </div>
                 </div>
@@ -513,17 +544,15 @@
                             </div>
                             <!-- Setor da empresa -->
                             <div class="form-floating mb-3">
-                                <select class="form-control" id="setor" name="setor" required oninvalid="this.setCustomValidity('Escolha o setor da sua empresa')" oninput="setCustomValidity('')">
-                                    <option value="">Tipo de instalação</option>
+                                <select class="form-control" id="tipo" name="tipo" required oninvalid="this.setCustomValidity('Escolha o tipo')" oninput="setCustomValidity('')">
+                                    <option selected>Escolha o Tipo</option>
                                     <option value="residenciao">Residencial</option>
                                     <option value="empresarial">Empresarial</option>
                                     <option value="condominio">Condominio</option>
                                 </select>
-                                <label for="setor">Tipo de instalação</label>
-                                <div class="invalid-feedback" data-sb-feedback="setor:required">Favor escolher o setor da empresa.</div>
                             </div>
                             <div class="d-grid">
-                                <button class="btn btn-whatsapp-sent btn-xl" id="submitButton" type="submit">Quero econimizar</button>
+                                <button class="btn btn-whatsapp-sent btn-xl" id="submitButton" type="submit">Quero economizar</button>
                             </div>
                         <form/>                  
                     <!-- Popup de sucesso/erro -->
