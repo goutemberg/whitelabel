@@ -45,9 +45,9 @@ RUN python -m venv /venv && \
   chmod -R 755 /data/web/static && \
   chmod -R 755 /data/web/media && \
   chmod -R 755 /projeto_whitelabel/staticfiles && \
-  chmod -R +x /scripts && \
   chmod -R 755 /projeto_whitelabel/static && \
-  chmod -R 755 /projeto_whitelabel/home/static && \ 
+  chmod -R 755 /projeto_whitelabel/home/static && \
+  chmod -R +x /scripts
 # Adiciona a pasta scripts e venv/bin 
 # no $PATH do container.
 ENV PATH="/scripts:/venv/bin:$PATH"
