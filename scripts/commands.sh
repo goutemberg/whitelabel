@@ -6,8 +6,8 @@ set -e
 
 
 collectstatic.sh
-makemigrations.sh
+#makemigrations.sh
 runserver.sh
-migrate.sh
+#migrate.sh
 gunicorn.sh
-wait_psql.sh
+#wait_psql.sh
