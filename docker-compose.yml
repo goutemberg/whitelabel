@@ -13,12 +13,12 @@ services:
       - .:/data/web/media:/projeto_whitelabel/home/static/whitelabel/media
     env_file:
       - ./dotenv_files/.env
-    depends_on:
-      - psql
-  psql:
-    container_name: psql_robochat
-    image: postgres:13-alpine
-    volumes:
-      - ./data/postgres/data:/var/lib/postgresql/data/
-    env_file:
-      - ./dotenv_files/.env
+  #   depends_on:
+  #     - psql
+  # psql:
+  #   container_name: psql_robochat
+  #   image: postgres:13-alpine
+  #   volumes:
+  #     - ./data/postgres/data:/var/lib/postgresql/data/
+  #   env_file:
+  #     - ./dotenv_files/.env
