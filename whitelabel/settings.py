@@ -135,7 +135,7 @@ if not DEBUG:
 
 # Configurações adicionais de arquivo estático
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static/whitelabel'),
+    os.path.join(BASE_DIR, 'staticfiles/whitelabel'),
 ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
