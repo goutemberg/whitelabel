@@ -23,7 +23,7 @@ SECRET_KEY = "8xxmq$kc3x2z*=*@f&0xk1^fgtb(p342)$gvafcrpp1=)jh@dl"
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'mgl-chat.onrender.com','mglautomacoes.com.br', 'www.mglautomacoes.com.br']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'whitelabel-solar.onrender.com']
 
 
 # Application definition
