@@ -33,22 +33,21 @@ RUN python -m venv /venv && \
   adduser --disabled-password --no-create-home duser && \
   mkdir -p /data/web/static && \
   mkdir -p /data/web/media && \
+  mkdir -p /projeto_whitelabel/staticfiles && \
   mkdir -p /projeto_whitelabel/static && \
   mkdir -p /projeto_whitelabel/home/static && \
-  mkdir -p /projeto_whitelabel/staticfiles && \
   chown -R duser:duser /venv && \
   chown -R duser:duser /data/web/static && \
   chown -R duser:duser /data/web/media && \
   chown -R duser:duser /projeto_whitelabel/staticfiles && \
-  mkdir -R duser:duser /projeto_whitelabel/static && \
-  mkdir -R duser:duser /projeto_whitelabel/home/static && \
+  chown -R duser:duser /projeto_whitelabel/static && \
+  chown -R duser:duser /projeto_whitelabel/home/static && \
   chmod -R 755 /data/web/static && \
   chmod -R 755 /data/web/media && \
   chmod -R 755 /projeto_whitelabel/staticfiles && \
-  chmod -R 755 projeto_whitelabel/static && \
-  chmod -R 755 projeto_whitelabel/home/static && \
-  chmod -R +x /scripts
-
+  chmod -R +x /scripts && \
+  chmod -R 755 /projeto_whitelabel/static && \
+  chmod -R 755 /projeto_whitelabel/home/static && \ 
 # Adiciona a pasta scripts e venv/bin 
 # no $PATH do container.
 ENV PATH="/scripts:/venv/bin:$PATH"
