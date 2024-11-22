@@ -11,17 +11,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 #DATA_DIR = BASE_DIR.parent / 'data' / 'web'
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "8xxmq$kc3x2z*=*@f&0xk1^fgtb(p342)$gvafcrpp1=)jh@dl"
 
-# SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = bool(int(os.getenv('DEBUG', 0)))
-
 DEBUG = True
-
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'whitelabel-solar.onrender.com']
 
@@ -134,6 +126,7 @@ if not DEBUG:
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 # Configurações adicionais de arquivo estático
+
 STATICFILES_DIRS = [
     BASE_DIR / "static",
     BASE_DIR / 'home/static',
