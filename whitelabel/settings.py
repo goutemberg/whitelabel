@@ -13,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = "8xxmq$kc3x2z*=*@f&0xk1^fgtb(p342)$gvafcrpp1=)jh@dl"
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'whitelabel-solar.onrender.com']
 
@@ -115,7 +115,7 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
 # Em produção (quando DEBUG é False), o Django coleta todos os arquivos estáticos aqui
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = "/projeto_whitelabel/staticfiles"
 
 # Diretório para salvar arquivos de mídia (uploads de usuários)
 MEDIA_ROOT = os.path.join(BASE_DIR, '/data/web/media')
@@ -128,8 +128,7 @@ if not DEBUG:
 # Configurações adicionais de arquivo estático
 
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
-    BASE_DIR / 'home/static',
+    "/projeto_whitelabel/home/static",
 ]
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
